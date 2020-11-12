@@ -10,23 +10,26 @@ steps:
 
 - script: |
     choco install openjdk
-
+    echo "checking env vars..."
     echo %JAVA_HOME%
     echo %PATH%
-
+    echo "refreshing env..."
     refreshenv
     echo %JAVA_HOME%
     echo %PATH%
+    echo "done"
 
   displayName: "Install OpenJDK"
 
 - script: |
+    echo "checking env vars..."
     echo %JAVA_HOME%
     echo %PATH%
-
+    echo "refreshing env..."
     refreshenv
     echo %JAVA_HOME%
     echo %PATH%
+    echo "done"
 
 #- task: Maven@3
 #  inputs:
