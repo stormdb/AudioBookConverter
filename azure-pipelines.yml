@@ -31,13 +31,9 @@ steps:
     echo %PATH%
     echo "done"
 
+- task: Maven@3
+  inputs:
+    goals: 'compile'
+
 #    choco install openjdk
-#- task: Maven@3
-#  inputs:
-#    javaHomeOption: 'JDKVersion'
-#    jdkVersionOption: '1.15'
-#    jdkArchitectureOption: 'x64'
-#    publishJUnitResults: true
-#    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-#    goals: 'test'
 
