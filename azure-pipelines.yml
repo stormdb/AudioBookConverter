@@ -1,14 +1,32 @@
+pr: none
+
 pool:
   vmImage: 'windows-latest'
 
 steps:
+- checkout: self
+  clean: "true"
+  fetchDepth: "1"
+
 - script: |
     choco install openjdk
+
     echo %JAVA_HOME%
     echo %PATH%
+
+    refreshenv
+    echo %JAVA_HOME%
+    echo %PATH%
+
   displayName: "Install OpenJDK"
 
-- script: echo %JAVA_HOME%
+- script: |
+    echo %JAVA_HOME%
+    echo %PATH%
+
+    refreshenv
+    echo %JAVA_HOME%
+    echo %PATH%
 
 #- task: Maven@3
 #  inputs:
@@ -18,3 +36,4 @@ steps:
 #    publishJUnitResults: true
 #    testResultsFiles: '**/surefire-reports/TEST-*.xml'
 #    goals: 'test'
+
