@@ -9,7 +9,6 @@ steps:
   fetchDepth: "1"
 
 - script: |
-#    choco install openjdk
     setx JAVA_HOME "C:\Program Files\OpenJDK"
     echo "checking env vars..."
     echo %JAVA_HOME%
@@ -32,6 +31,7 @@ steps:
     echo %PATH%
     echo "done"
 
+#    choco install openjdk
 #- task: Maven@3
 #  inputs:
 #    javaHomeOption: 'JDKVersion'
