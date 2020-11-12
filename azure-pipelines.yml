@@ -11,7 +11,7 @@ pool:
 
 steps:
 - script: choco install openjdk
-- script: echo $JAVA_HOME
+- script: echo %JAVA_HOME%
 
 #- task: Maven@3
 #  inputs:
