@@ -9,12 +9,13 @@ steps:
   fetchDepth: "1"
 
 - script: |
-    choco install openjdk
+#    choco install openjdk
+    setx JAVA_HOME "C:\Program Files\OpenJDK"
     echo "checking env vars..."
     echo %JAVA_HOME%
     echo %PATH%
     echo "refreshing env..."
-    refreshenv
+    call refreshenv
     echo %JAVA_HOME%
     echo %PATH%
     echo "done"
@@ -26,7 +27,7 @@ steps:
     echo %JAVA_HOME%
     echo %PATH%
     echo "refreshing env..."
-    refreshenv
+    call refreshenv
     echo %JAVA_HOME%
     echo %PATH%
     echo "done"
