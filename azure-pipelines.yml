@@ -11,12 +11,13 @@ pool:
 
 steps:
 - script: choco install openjdk
+- script: echo $JAVA_HOME
 
-- task: Maven@3
-  inputs:
-    javaHomeOption: 'JDKVersion'
-    jdkVersionOption: '1.15'
-    jdkArchitectureOption: 'x64'
-    publishJUnitResults: true
-    testResultsFiles: '**/surefire-reports/TEST-*.xml'
-    goals: 'test'
+#- task: Maven@3
+#  inputs:
+#    javaHomeOption: 'JDKVersion'
+#    jdkVersionOption: '1.15'
+#    jdkArchitectureOption: 'x64'
+#    publishJUnitResults: true
+#    testResultsFiles: '**/surefire-reports/TEST-*.xml'
+#    goals: 'test'
